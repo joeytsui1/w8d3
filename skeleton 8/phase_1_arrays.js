@@ -12,16 +12,6 @@ Array.prototype.uniq = function() {
     return retArr
 }
 
-let arr = []
-
-for (let i = 0; i < this.length; i++) {
-    if (!arr.includes(this[i])) {
-        arr.push(this[i])
-    }
-}
-
-return arr
-
 // console.log("test")
 // console.log([1, 2, 2, 3, 3, 3].uniq())
 
@@ -30,11 +20,12 @@ Array.prototype.twoSum = function() {
     let retArr = []
 
     for (let i = 0; i < this.length; i++) {
+        obj[-this[i]] = i
+        
         if (obj[this[i]] !== undefined) {
             debugger
             retArr.push([obj[this[i]], i])
         } 
-        obj[this[i]] = i
     }
    return retArr
 }
